@@ -1,4 +1,4 @@
-name: Deployment of database
+name: Usage of environment variables and secrets
 on:
   push:
     branches:
@@ -10,8 +10,8 @@ jobs:
   test:
     env:
       MUNGO_CLUSTER_ADDRESS: test.cluster.48qwmoo.mungodb.xyz
-      MUNGODB_USERNAME: jeyan
-      MUNGODB_PASSWORD: P@ssw0rd!23
+      MUNGODB_USERNAME: ${{ secrets.MUNGODB_USERNAME }}
+      MUNGODB_PASSWORD: ${{ secrets.MUNGODB_PASSWORD }}
       PORT: 1234
     runs-on: ubuntu-latest
     steps:
