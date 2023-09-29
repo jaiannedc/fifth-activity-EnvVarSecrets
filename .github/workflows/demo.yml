@@ -8,6 +8,7 @@ env:
   DATABASE_NAME: demo_db
 jobs:
   test:
+    environment: testing
     env:
       MUNGO_CLUSTER_ADDRESS: test.cluster.48qwmoo.mungodb.xyz
       MUNGODB_USERNAME: ${{ secrets.MUNGODB_USERNAME }}
